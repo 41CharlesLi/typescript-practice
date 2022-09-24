@@ -58,3 +58,21 @@ function calTax(income: number, taxYear = 2022): number {
     }
     return income * 1.3;
 }
+
+// OBJECTS
+// use ? to make something optional
+// use readonly property to prevent changes
+let employee: {
+    readonly id: number;
+    name?: string;
+    retire: (date: Date) => void;
+    // use void when you don't want a value returned
+} = {
+    id: 1,
+    retire: (date: Date) => {
+        console.log(date);
+    },
+};
+
+// employee.name = "Charles" <-- this is not valid
+employee.name = "charles";
