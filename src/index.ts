@@ -36,3 +36,25 @@ let strictNumbers: number[] = [];
 let user: [number, string] = [1, "Charles"];
 
 // try and restrict tuples to key value pairs to keep code readable
+
+// ENUMS a list of related constants
+// pascal naming convention
+const enum Size {
+    Small = 1,
+    Medium,
+    Large,
+}
+
+let mySize: Size = Size.Medium;
+
+console.log(mySize);
+
+//Functions
+// changed settings in tsconfig to account for number of arguments, types, no unused locals, no implicit returns. This will help root out bugs at compile and not at runtime
+// taxYear is set with a default value, so if the parameter is not provided when the function is called, the default will be used
+function calTax(income: number, taxYear = 2022): number {
+    if (taxYear < 2022) {
+        return income * 1.2;
+    }
+    return income * 1.3;
+}

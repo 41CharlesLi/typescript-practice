@@ -15,4 +15,6 @@ function render(document) {
 let numbers = [1, 2, 3];
 let strictNumbers = [];
 let user = [1, "Charles"];
+let mySize = 2;
+console.log(mySize);
 //# sourceMappingURL=index.js.map
