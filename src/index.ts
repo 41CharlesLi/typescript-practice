@@ -20,3 +20,19 @@ let level;
 function render(document: any) {
     console.log(document);
 }
+// ARRAYS
+// let number = [1, 2, '3'] this is fine in JS but will be an issues if function expects only numbers
+
+let numbers: number[] = [1, 2, 3];
+
+let strictNumbers: number[] = [];
+
+// numbers.forEach(n => n.toFixed
+//     ) because TS knows n is going to be a number, it'll bring up number specific methods. Good for productivity
+
+// TUPLES
+// fixed length array, can't add additional elements or error will be thrown
+// 1, 'Charles'
+let user: [number, string] = [1, "Charles"];
+
+// try and restrict tuples to key value pairs to keep code readable
