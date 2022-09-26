@@ -101,3 +101,36 @@ function kgToLbs(weight: number | string): number {
         return parseInt(weight) * 2.2;
     }
 }
+
+//INTERSECTION type
+// creating a widget that has both the methods of Draggable and Resizable
+type Draggable = {
+    drag: () => void;
+};
+
+type Resizable = {
+    resize: () => void;
+};
+
+type UIWidget = Draggable & Resizable;
+
+let textBox: UIWidget = {
+    drag: () => {},
+    resize: () => {},
+};
+
+// LITERAL TYPES
+// limit the values we can assign to a variable
+// Literal (exact, specific value)
+type Quantity = 50 | 100;
+
+// quantity can now be assigned as 50 or 100
+let quantity: Quantity = 100;
+
+// Nullable Types
+function greet(name: string | null | undefined) {
+    if (name) console.log(name.toUpperCase());
+    else console.log("Hola!");
+}
+
+// using unions to include null and undefined means that this code won't throw an error if a null or undefined value is used as a parameter
