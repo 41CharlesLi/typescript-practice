@@ -62,17 +62,42 @@ function calTax(income: number, taxYear = 2022): number {
 // OBJECTS
 // use ? to make something optional
 // use readonly property to prevent changes
-let employee: {
-    readonly id: number;
-    name?: string;
-    retire: (date: Date) => void;
-    // use void when you don't want a value returned
-} = {
+// let employee: Employee = {
+//     // use void when you don't want a value returned
+// } = {
+//     id: 1,
+//     retire: (date: Date) => {
+//         console.log(date);
+//     },
+// };
+
+let employee: Employee = {
     id: 1,
     retire: (date: Date) => {
         console.log(date);
     },
 };
 
-// employee.name = "Charles" <-- this is not valid
+// employee.name = "Charles" <-- this is not valid if the type is not strictly outlined in object
 employee.name = "charles";
+
+//ADVANCED TYPES
+
+//TYPE ALIASES
+//used to create a shape of an object for reuse later
+type Employee = {
+    readonly id: number;
+    name?: string;
+    retire: (date: Date) => void;
+};
+
+//UNION TYPES
+
+function kgToLbs(weight: number | string): number {
+    //Narrowing to narrow type
+    if (typeof weight === "number") {
+        return weight * 2.2;
+    } else {
+        return parseInt(weight) * 2.2;
+    }
+}
